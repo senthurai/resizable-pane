@@ -1,0 +1,255 @@
+$spacing: 8px;
+/**
+ * Content Layout
+ */
+.content {
+    display: flex;
+    flex-flow: column nowrap;
+}
+$spacing: 8px;
+
+/**
+ * Content Layout
+ */
+.content {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.row {
+    flex: 1 1;
+    display: flex;
+    max-width: calc(100% - 10px);
+    flex-flow: row nowrap;
+    overflow: hidden;
+    &.resizable {
+        flex: 0 0 500px;
+    }
+}
+
+.cell {
+    box-sizing: border-box;
+    overflow: visible;
+    background: #fff;
+    flex-flow: row nowrap;
+    border: $spacing/2 solid #f0f0f0;
+    flex: 1 1 30%;
+    min-width: 35px;
+    overflow: hidden;
+    min-height: 35px;
+    &.resizable {
+        flex: 0 0 400px;
+    }
+}
+
+/**
+ * Resizable Handles
+ */
+.resizable {
+    position: relative;
+}
+.handle-none {
+    display: none;
+}
+.handle-y,
+.handle-x {
+    display: block;
+    width: $spacing;
+    height: $spacing;
+    line-height: $spacing;
+    user-select: none;
+    background: transparent;
+    z-index: 1;
+    span {
+        box-sizing: border-box;
+        display: block;
+        border: 1px solid #ccc;
+    }
+}
+
+.handle-y {
+    span {
+        border-width: 0 1px;
+        top: 50%;
+        margin-top: -10px;
+        margin: -10px 0 0 $spacing/4;
+        height: 20px;
+        width: $spacing/2;
+    }
+}
+
+.handle-x {
+    span {
+        border-width: 1px 0;
+        left: 50%;
+        margin: $spacing/4 0 0 -10px;
+        width: 20px;
+        height: $spacing/2;
+    }
+}
+
+.handle-x {
+    cursor: row-resize;
+    width: calc(100% - 10px);
+    margin-top: -#{$spacing/2};
+}
+
+.handle-y {
+    cursor: col-resize;
+    height: calc(100% - 10px);
+
+    margin-right: -#{$spacing};
+}
+
+/**
+ * Column Layout Overrides
+ */
+.content.cols {
+    flex-flow: row nowrap;
+    .row {
+        flex-flow: column nowrap;
+    }
+    .cell {
+        min-width: 60px;
+    }
+    .handle-x {
+        margin-top: -#{$spacing};
+    }
+    .handle-y {
+        margin-right: -#{$spacing/2};
+    }
+}
+
+.min-width {
+    min-width: 150px;
+}
+
+/**
+ * Resizable Handles
+ */
+.resizable {
+    position: relative;
+}
+.handle-none {
+    display: none;
+}
+.handle-x,
+.handle-y {
+    display: block;
+    width: $spacing;
+    height: $spacing;
+    line-height: $spacing;
+    user-select: none;
+    background: transparent;
+    z-index: 1;
+    span {
+        position: relative;
+        box-sizing: border-box;
+        display: block;
+        border: 1px solid #dcc357;
+    
+    }
+}
+
+.handle-y {
+    span {
+        border-width: 0 1px;
+        top: 43%;
+        margin-top: -10px;
+        margin: -10px 0 0 $spacing/4;
+        height: 20px;
+        width: $spacing/2;
+    }
+}
+.handle-x {
+    span {
+        border-width: 1px 0;
+        left: 50%;
+        margin: $spacing/4 0 0 -10px;
+        width: 20px;
+        height: $spacing/2;
+    }
+}
+.handle-x {
+    cursor: row-resize;
+    width: calc(100% - 10px);
+
+    margin-top: -#{$spacing/2};
+}
+.handle-y {
+    cursor: col-resize;
+    height: calc(100% - 10px);
+
+    margin-right: -#{$spacing};
+}
+
+/**
+ * Column Layout Overrides
+ */
+.content.cols {
+    flex-flow: row nowrap;
+    .row {
+        flex-flow: column nowrap;
+    }
+    .cell {
+        min-width: 60px;
+    }
+    .handle-y {
+        margin-top: -#{$spacing};
+    }
+    .handle-x {
+        margin-right: -#{$spacing/2};
+    }
+}
+
+.modal-control {
+    right: 0px;
+    z-index: 1;
+    background-color: black;
+}
+.spacer {
+    flex: 1;
+}
+.modal-window-max {
+    width: 15px;
+    height: 15px;
+    border-top: solid #a4d0f7 8px;
+    border-right: solid #a4d0f7 8px;
+    border-bottom: 0px;
+    border-left: 0px;
+    cursor: pointer;
+}
+
+.closable {
+    cursor: pointer;
+}
+.modal-window-min {
+    width: 15px;
+    height: 15px;
+    border-bottom: solid #a4d0f7 5px;
+    border-left: solid #a4d0f7 5px;
+    cursor: pointer;
+    border-right: solid #000 5px;
+    border-top: solid #000 5px;
+}
+
+.closed {
+    position: relative;
+    display: none !important;
+    width: 35px !important;
+    min-width: 35px !important;
+    max-width: 35px !important;
+    background-color: #000;
+}
+
+.fullscreen {
+    min-height: calc(100% - 10px);
+    width: calc(100% - 10px);
+    max-width: calc(100% - 10px);
+    max-height: calc(100% - 10px);
+    position: fixed;
+    z-index: 1000;
+}
+.minimize {
+    max-width: 30px;
+}

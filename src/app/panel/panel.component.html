@@ -1,0 +1,13 @@
+<span *ngIf='isView' class='d-flex flex-row modal-control w-100' [class.h-100]='closed.state'
+    [class.flex-column]='closed.state' [class.flex-row]='!closed.state'>
+    <a (click)='close()'>
+        <span class='float-left closable'>
+            <svg height='26' id='triangle-right' viewBox='0 0 26 20' width='18' xmlns='http://www.w3.org/2000/svg'>
+                <path fill='white' d='M8 4 V28 L26 16 z' /></svg>
+        </span>
+    </a>
+    <span class='spacer'></span>
+    <span class='modal-window-min m-1 ' *ngIf='isFullscreen  ' mat-button (click)='setFullscreen(false)'></span>
+    <span class='modal-window-max m-1 ' *ngIf='!isFullscreen  ' mat-button (click)='setFullscreen(true)'></span>
+</span>
+<ng-content *ngIf='!closed.state  '></ng-content>

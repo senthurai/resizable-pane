@@ -1,0 +1,15 @@
+:host {
+  --background-secondary: rgb(206, 168, 168);
+}
+
+.home {
+  height: calc(100vh - 60px);
+  background-color: rgb(209, 209, 209);
+  padding: 0px;
+  margin: 0px;
+}
+.inside {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
